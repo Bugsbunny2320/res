@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #425a7e;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .gif-container {
+            margin-bottom: 20px;
+        }
+
+        .gif-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .buttons {
+            position: relative;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .yes {
+            background-color: #28a745;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .yes:hover {
+            background-color: #218838;
+        }
+
+        .no {
+            background-color: #dc3545;
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey Rithanaaa,</h1>
+        <h1>I've got a reservation with our names on it -- datenight, perhaps?</h1>
+        <div class="gif-container">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnBzeDhpMDZwdmZ6emo5OWptaGxtcHA0dmwwOXc2eTl4azhuM2lxeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9DavVitIZ26jH0aK7s/giphy.webp" alt="Cute cat gif">
+        </div>
+        <div class="buttons">
+            <button class="yes" onclick="respondYes()">Yes</button>
+            <button class="no" onmouseover="moveButton()">No</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        PS: NO is off the table, so make your YES count xD
+    </div>
+
+    <script>
+        function respondYes() {
+            alert("Haha, knew you'd click! 😜 Wanna know the place? Click OK!");
+            window.location.href = "https://www.zomato.com/bangalore/biergarten-koramangala-5th-block"; // Replace with your own URL
+        }
+
+        function moveButton() {
+            const noButton = document.querySelector('.no');
+            const container = document.querySelector('.buttons');
+            const containerRect = container.getBoundingClientRect();
+            const maxX = containerRect.width - noButton.offsetWidth;
+            const maxY = containerRect.height - noButton.offsetHeight;
+            const newX = Math.floor(Math.random()  * maxX);
+            const newY = Math.floor(Math.random() * maxY);
+            noButton.style.transform = `translate(${newX}px, ${newY}px)`;
+        }
+    </script>
+</body>
+</html>
